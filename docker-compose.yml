@@ -1,0 +1,47 @@
+services:
+  # tg-subscription-bot:
+  #   build: .
+  #   environment:
+  #     DOPPLER_TOKEN: ${DOPPLER_TOKEN}
+  #   restart: always
+  postgres:
+    image: postgres:15.4
+    container_name: tgbot-db
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: tgbot
+      POSTGRES_USER: tgbot
+      POSTGRES_PASSWORD: tgbotSecret
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tgbot -d tgbot || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  redis:
+    image: redis:7.2-alpine
+    container_name: tgbot-redis
+    command: redis-server --requirepass jsmbotSecret
+    restart: always
+    ports:
+      - 6379:6379
+# bdalerts:
+#   build:
+#     context: .
+#   image: bdalerts:latest
+#   container_name: bdalerts
+#   command: ["node", "dist/index.js"]
+#   restart: unless-stopped
+#   depends_on:
+#     - postgres
+#   ports:
+#     - "3013:3013"
+#   environment:
+#     NODE_ENV: production
+#     PORT: 3013
+#     DATABASE_URL: postgres://bdalerts:bdalertsSecret@postgres:5432/bdalerts
+volumes:
+  postgres_data:
