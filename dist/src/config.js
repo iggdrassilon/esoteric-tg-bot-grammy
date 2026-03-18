@@ -1,0 +1,1 @@
+import r from"dotenv";import o from"./env.js";r.config();export var config={botToken:o.BOT_TOKEN,port:Number(o.PORT),pgUrl:o.POSTGRES_URL,redisUrl:o.REDIS_URL,adminChatId:o.ADMIN_CHAT_ID,watcher:o.WATCHER_ID,channelId:o.CHANNEL_ID,publicId:o.PUBLIC_ID,uploadsDir:o.UPLOADS_DIR,courseLink:o.COURSE_LINK};

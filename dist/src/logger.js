@@ -1,0 +1,1 @@
+import o from"pino";import r from"./env.js";export var logger=o({level:"production"===r.NODE_ENV?"info":"debug",transport:"production"===r.NODE_ENV?void 0:{target:"pino-pretty"}});

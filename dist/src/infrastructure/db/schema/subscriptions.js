@@ -1,0 +1,1 @@
+import{pgTable as t,serial as r,text as i,timestamp as e,boolean as o}from"drizzle-orm/pg-core";export var subscriptions=t("subscriptions",{id:r("id").primaryKey(),userId:i("userId").notNull(),product:i("product").notNull(),startAt:e("startAt").defaultNow(),expireAt:e("expireAt").notNull(),isActive:o("isActive").default(!0)});

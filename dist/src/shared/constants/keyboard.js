@@ -1,0 +1,1 @@
+import{InlineKeyboard as e}from"grammy";var o={backKey:"Назад",menu:"В Меню"},r={root:new e().text(o.backKey,"back:root"),menu:new e().text(o.menu,"back:root")};export{o as keys,r as keyboard};

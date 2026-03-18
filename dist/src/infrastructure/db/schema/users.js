@@ -1,0 +1,1 @@
+import{pgTable as e,serial as r,text as t,timestamp as u}from"drizzle-orm/pg-core";export var users=e("users",{id:r("id").primaryKey(),userId:t("userId").notNull(),userName:t("userName"),userFullName:t("userFullName"),createAt:u("createAt").defaultNow(),updatedAt:u("updatedAt"),inviteChannel:t("inviteChannel")});

@@ -1,0 +1,1 @@
+import o from"zod";var e=o.object({paymentId:o.string(),product:o.enum(["channel","course"])});export{e as payloadSchema};

@@ -1,0 +1,1 @@
+import t from"zod";export var subscriptionCreateSchema=t.object({userId:t.string(),product:t.string().min(1),startAt:t.date(),expireAt:t.date()});export var subscriptionUpdateSchema=t.object({id:t.number(),userId:t.string(),product:t.string().min(1),startAt:t.date(),expireAt:t.date(),isActive:t.boolean().default(!0)});

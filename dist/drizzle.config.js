@@ -1,0 +1,1 @@
+import{config as e}from"dotenv";import r from"./src/env.js";e();export default{schema:"./src/infrastructure/db/schema/index.ts",out:"./drizzle",dialect:"postgresql",dbCredentials:{url:r.POSTGRES_URL},verbose:!0,strict:!0,introspect:{casing:"preserve"},schemaFilter:["public"]};
